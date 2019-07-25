@@ -1,19 +1,15 @@
-# User Table
+-- User TABLE
 
-```
-CREATE TABLE user (
+CREATE TABLE `user`(
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
 `firstname` VARCHAR(30) NOT NULL,
 `lastname` VARCHAR(30) NOT NULL,
 `email` VARCHAR(50),
-`reg_date` TIMESTAMP
-PRIMARY KEY (`id`)
+`reg_date` TIMESTAMP,
+PRIMARY KEY(`id`)
 )
-```
 
-# Posts Table
-
-```
+--- Posts Table
 CREATE TABLE `posts` (
  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
  `user_id` int(11) DEFAULT NULL,
@@ -27,4 +23,3 @@ CREATE TABLE `posts` (
  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
-```
